@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+    <h1>AI Student Support Assistant</h1>
+    <p>Your one-stop helper for studies, exams, attendance, assignments, and career guidance.</p>
+    {% if not logged_in %}
+        <a href="{{ url_for('register') }}" class="btn">Get Started</a>
+    {% else %}
+        <a href="{{ url_for('dashboard') }}" class="btn">Go to Dashboard</a>
+    {% endif %}
+</div>
+
+<div class="features">
+    <div class="feature-card">🤖 AI Chatbot</div>
+    <div class="feature-card">📘 Study Assistance</div>
+    <div class="feature-card">📝 Exam Support</div>
+    <div class="feature-card">📅 Attendance Tracker</div>
+    <div class="feature-card">⏰ Assignment Reminder</div>
+    <div class="feature-card">🏫 College Information</div>
+    <div class="feature-card">💼 Career Guidance</div>
+</div>
+{% endblock %}

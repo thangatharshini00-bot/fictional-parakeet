@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ name }} 👋</h2>
+<p>Choose what you need help with today:</p>
+
+<div class="features">
+    <a class="feature-card" href="{{ url_for('chatbot') }}">🤖 AI Chatbot</a>
+    <a class="feature-card" href="{{ url_for('study') }}">📘 Study Assistance</a>
+    <a class="feature-card" href="{{ url_for('exam') }}">📝 Exam Support</a>
+    <a class="feature-card" href="{{ url_for('attendance') }}">📅 Attendance Tracker</a>
+    <a class="feature-card" href="{{ url_for('assignments') }}">⏰ Assignment Reminder</a>
+    <a class="feature-card" href="{{ url_for('college') }}">🏫 College Information</a>
+    <a class="feature-card" href="{{ url_for('career') }}">💼 Career Guidance</a>
+</div>
+{% endblock %}

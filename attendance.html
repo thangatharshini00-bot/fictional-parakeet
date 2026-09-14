@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📅 Attendance Tracker</h2>
+
+<div class="form-card">
+    <form method="POST">
+        <label>Subject</label>
+        <input type="text" name="subject" required>
+
+        <label>Status</label>
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+
+        <button type="submit" class="btn">Add Record</button>
+    </form>
+</div>
+
+<h3>Attendance %: {{ percentage }}%</h3>
+
+<table class="data-table">
+    <tr><th>Subject</th><th>Status</th><th>Date</th></tr>
+    {% for r in records %}
+    <tr>
+        <td>{{ r['subject'] }}</td>
+        <td>{{ r['status'] }}</td>
+        <td>{{ r['date'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🏫 College Information</h2>
+<table class="data-table">
+    {% for key, value in info.items() %}
+    <tr><th>{{ key }}</th><td>{{ value }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

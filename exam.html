@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📝 Exam Support</h2>
+<ul class="tip-list">
+    {% for g in guides %}
+        <li>{{ g }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

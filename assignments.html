@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>⏰ Assignment Reminder</h2>
+
+<div class="form-card">
+    <form method="POST">
+        <label>Assignment Title</label>
+        <input type="text" name="title" required>
+
+        <label>Due Date</label>
+        <input type="date" name="due_date" required>
+
+        <button type="submit" class="btn">Add Assignment</button>
+    </form>
+</div>
+
+<table class="data-table">
+    <tr><th>Title</th><th>Due Date</th><th>Status</th><th>Action</th></tr>
+    {% for t in tasks %}
+    <tr>
+        <td>{{ t['title'] }}</td>
+        <td>{{ t['due_date'] }}</td>
+        <td>{{ t['status'] }}</td>
+        <td>
+            {% if t['status'] != 'Done' %}
+            <a href="{{ url_for('complete_assignment', task_id=t['id']) }}">Mark Done</a>
+            {% else %}
+            ✅
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

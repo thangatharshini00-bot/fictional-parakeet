@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📘 Study Assistance</h2>
+<ul class="tip-list">
+    {% for tip in tips %}
+        <li>{{ tip }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

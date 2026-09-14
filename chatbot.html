@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-card">
+    <h2>🤖 AI Chatbot</h2>
+    <form method="POST">
+        <label>Ask something (attendance, exams, assignments, career...)</label>
+        <input type="text" name="message" required>
+        <button type="submit" class="btn">Send</button>
+    </form>
+
+    {% if user_message %}
+        <div class="chat-bubble user"><b>You:</b> {{ user_message }}</div>
+        <div class="chat-bubble bot"><b>Bot:</b> {{ reply }}</div>
+    {% endif %}
+</div>
+{% endblock %}
