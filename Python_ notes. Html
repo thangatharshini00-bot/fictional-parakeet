@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 8%;
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .topic {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .topic h2 {
+            color: #4f46e5;
+        }
+
+        .topic p {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        code {
+            background: #e2e8f0;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>🐍 Python Notes</h2>
+        <a href="/notes">← Back to Notes</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Python Programming 📚</h1>
+
+        <p class="subtitle">
+            Basic Python programming study materials.
+        </p>
+
+        <div class="topic">
+            <h2>1. What is Python?</h2>
+
+            <p>
+                Python is a high-level, interpreted programming
+                language known for its simple and readable syntax.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>2. Variables</h2>
+
+            <p>
+                Variables are used to store values in a Python program.
+            </p>
+
+            <p>
+                Example:
+                <code>name = "Student"</code>
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>3. Data Types</h2>
+
+            <p>
+                Common Python data types include
+                int, float, string, list, tuple and dictionary.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>4. Conditional Statements</h2>
+
+            <p>
+                Conditional statements are used to make decisions
+                in a program.
+            </p>
+
+            <p>
+                Example:
+                <code>if age >= 18:</code>
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>5. Functions</h2>
+
+            <p>
+                A function is a reusable block of code that performs
+                a specific task.
+            </p>
+
+            <p>
+                Example:
+                <code>def greet():</code>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
