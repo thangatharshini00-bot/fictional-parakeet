@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 40px 8%;
+        }
+
+        .topic {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        p {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #e2e8f0;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>☕ Java Notes</h2>
+        <a href="/notes">← Back to Notes</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Java Programming 📚</h1>
+        <p>Basic Java study materials</p>
+
+        <div class="topic">
+            <h2>1. What is Java?</h2>
+            <p>
+                Java is a high-level, object-oriented programming language
+                used to develop applications, websites and software systems.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>2. Variables</h2>
+            <p>
+                Variables are used to store data values in a program.
+            </p>
+
+            <p>
+                Example: <code>int age = 20;</code>
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>3. Object-Oriented Programming</h2>
+            <p>
+                Java supports important OOP concepts such as
+                Class, Object, Inheritance, Polymorphism,
+                Encapsulation and Abstraction.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>4. Simple Java Program</h2>
+
+            <p>
+                <code>
+                    public class Main {<br>
+                    &nbsp;&nbsp;public static void main(String[] args) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World");<br>
+                    &nbsp;&nbsp;}<br>
+                    }
+                </code>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
