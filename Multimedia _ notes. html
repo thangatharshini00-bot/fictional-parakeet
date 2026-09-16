@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multimedia Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 8%;
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .topic {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .topic h2 {
+            color: #4f46e5;
+        }
+
+        .topic p {
+            color: #475569;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>🎬 Multimedia Notes</h2>
+        <a href="/notes">← Back to Notes</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Multimedia & Animation 📚</h1>
+
+        <p class="subtitle">
+            Basic multimedia and animation study materials.
+        </p>
+
+        <div class="topic">
+            <h2>1. What is Multimedia?</h2>
+
+            <p>
+                Multimedia is the combination of different types
+                of media such as text, images, audio, video and animation
+                to communicate information.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>2. Types of Multimedia</h2>
+
+            <p>
+                Multimedia can include text, graphics, audio,
+                video and animation.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>3. Animation</h2>
+
+            <p>
+                Animation is the process of creating the appearance
+                of movement by displaying a sequence of images or frames.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>4. Keyframe</h2>
+
+            <p>
+                A keyframe represents an important position or
+                change in an animation sequence.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>5. Audio and Video</h2>
+
+            <p>
+                Audio represents sound information, while video
+                represents moving visual information.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
