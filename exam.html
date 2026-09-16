@@ -1,9 +1,138 @@
-{% extends "base.html" %}
-{% block content %}
-<h2>📝 Exam Support</h2>
-<ul class="tip-list">
-    {% for g in guides %}
-        <li>{{ g }}</li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 8%;
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .topic {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .topic h2 {
+            color: #4f46e5;
+        }
+
+        .topic p {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        code {
+            background: #e2e8f0;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>🗄️ Database Notes</h2>
+        <a href="/notes">← Back to Notes</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Database & SQL 📚</h1>
+
+        <p class="subtitle">
+            Basic database and SQL study materials.
+        </p>
+
+        <div class="topic">
+            <h2>1. What is a Database?</h2>
+
+            <p>
+                A database is an organized collection of data
+                that can be stored, managed and accessed easily.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>2. DBMS</h2>
+
+            <p>
+                DBMS stands for Database Management System.
+                It is software used to create, store and manage data.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>3. SQL</h2>
+
+            <p>
+                SQL stands for Structured Query Language.
+                It is used to communicate with relational databases.
+            </p>
+
+            <p>
+                Example:
+                <code>SELECT * FROM students;</code>
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>4. Primary Key</h2>
+
+            <p>
+                A primary key uniquely identifies each record
+                in a database table.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>5. CRUD Operations</h2>
+
+            <p>
+                CRUD stands for Create, Read, Update and Delete.
+                These are the basic operations performed on data.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
