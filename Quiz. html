@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>🎯 Quiz</h1>
+
+<p>Test your programming knowledge!</p>
+
+<div class="card">
+
+    <h2>Question 1</h2>
+    <p>Which language are we using for the Flask project?</p>
+
+    <input type="radio" name="q1" value="Python"> Python<br>
+    <input type="radio" name="q1" value="Java"> Java<br>
+    <input type="radio" name="q1" value="C++"> C++<br>
+
+    <h2>Question 2</h2>
+    <p>Which keyword is used to create a class in Java?</p>
+
+    <input type="radio" name="q2" value="class"> class<br>
+    <input type="radio" name="q2" value="object"> object<br>
+    <input type="radio" name="q2" value="create"> create<br>
+
+    <h2>Question 3</h2>
+    <p>Which one is a Java primitive data type?</p>
+
+    <input type="radio" name="q3" value="int"> int<br>
+    <input type="radio" name="q3" value="String"> String<br>
+    <input type="radio" name="q3" value="Array"> Array<br>
+
+    <br>
+
+    <button class="btn" onclick="checkQuiz()">Submit Quiz</button>
+
+    <h2 id="result"></h2>
+
+</div>
+
+<script>
+function checkQuiz() {
+
+    let score = 0;
+
+    if (document.querySelector('input[name="q1"]:checked')?.value === "Python") {
+        score++;
+    }
+
+    if (document.querySelector('input[name="q2"]:checked')?.value === "class") {
+        score++;
+    }
+
+    if (document.querySelector('input[name="q3"]:checked')?.value === "int") {
+        score++;
+    }
+
+    document.getElementById("result").innerHTML =
+        "🎉 Your Score: " + score + " / 3";
+}
+</script>
+
+{% endblock %}
