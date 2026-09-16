@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>AI Student Support Assistant</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<nav class="navbar">
-    <a href="{{ url_for('home') }}" class="brand">🎓 Student Assistant</a>
-    <div class="nav-links">
-        {% if session.get('user_id') %}
-            <a href="{{ url_for('dashboard') }}">Dashboard</a>
-            <a href="{{ url_for('chatbot') }}">Chatbot</a>
-            <a href="{{ url_for('study') }}">Study</a>
-            <a href="{{ url_for('exam') }}">Exams</a>
-            <a href="{{ url_for('attendance') }}">Attendance</a>
-            <a href="{{ url_for('assignments') }}">Assignments</a>
-            <a href="{{ url_for('college') }}">College</a>
-            <a href="{{ url_for('career') }}">Career</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-        {% else %}
-            <a href="{{ url_for('login') }}">Login</a>
-            <a href="{{ url_for('register') }}">Register</a>
-        {% endif %}
+{% block content %}
+
+<h1>📈 Attendance</h1>
+
+<p>Check your subject-wise attendance.</p>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+    <div class="card">
+        <h2>☕ Java Programming</h2>
+        <h3>85%</h3>
     </div>
-</nav>
 
-<div class="container">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="flash {{ category }}">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    <div class="card">
+        <h2>🌐 Web Technology</h2>
+        <h3>90%</h3>
+    </div>
 
-    {% block content %}{% endblock %}
+    <div class="card">
+        <h2>🔐 Cyber Security</h2>
+        <h3>80%</h3>
+    </div>
+
+    <div class="card">
+        <h2>🎬 Multimedia</h2>
+        <h3>95%</h3>
+    </div>
+
 </div>
 
-</body>
-</html>
+{% endblock %}
