@@ -1,22 +1,163 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="hero">
-    <h1>AI Student Support Assistant</h1>
-    <p>Your one-stop helper for studies, exams, attendance, assignments, and career guidance.</p>
-    {% if not logged_in %}
-        <a href="{{ url_for('register') }}" class="btn">Get Started</a>
-    {% else %}
-        <a href="{{ url_for('dashboard') }}" class="btn">Go to Dashboard</a>
-    {% endif %}
-</div>
 
-<div class="features">
-    <div class="feature-card">🤖 AI Chatbot</div>
-    <div class="feature-card">📘 Study Assistance</div>
-    <div class="feature-card">📝 Exam Support</div>
-    <div class="feature-card">📅 Attendance Tracker</div>
-    <div class="feature-card">⏰ Assignment Reminder</div>
-    <div class="feature-card">🏫 College Information</div>
-    <div class="feature-card">💼 Career Guidance</div>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Learning & Study Assistant</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #64748b;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px 8% 60px;
+        }
+
+        .card {
+            background: white;
+            width: 220px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin: 12px 0;
+            color: #1e293b;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>🎓 AI Study Assistant</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+
+        <h1>Learn Smarter with <span>AI</span></h1>
+
+        <p>
+            Your personal AI-powered learning and study assistant
+        </p>
+
+        <a href="#" class="btn">Get Started 🚀</a>
+
+    </section>
+
+    <section class="features">
+
+        <div class="card">
+            <h1>📚</h1>
+            <h3>Study Notes</h3>
+            <p>Access and manage your study materials.</p>
+        </div>
+
+        <div class="card">
+            <h1>🤖</h1>
+            <h3>AI Doubt Assistant</h3>
+            <p>Ask questions and get AI-powered answers.</p>
+        </div>
+
+        <div class="card">
+            <h1>📝</h1>
+            <h3>Quiz</h3>
+            <p>Test your knowledge with quizzes.</p>
+        </div>
+
+        <div class="card">
+            <h1>📊</h1>
+            <h3>Progress</h3>
+            <p>Track your learning progress.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 AI Learning & Study Assistant
+    </footer>
+
+</body>
+</html>
