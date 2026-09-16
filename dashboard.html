@@ -1,15 +1,57 @@
 {% extends "base.html" %}
-{% block content %}
-<h2>Welcome, {{ name }} 👋</h2>
-<p>Choose what you need help with today:</p>
 
-<div class="features">
-    <a class="feature-card" href="{{ url_for('chatbot') }}">🤖 AI Chatbot</a>
-    <a class="feature-card" href="{{ url_for('study') }}">📘 Study Assistance</a>
-    <a class="feature-card" href="{{ url_for('exam') }}">📝 Exam Support</a>
-    <a class="feature-card" href="{{ url_for('attendance') }}">📅 Attendance Tracker</a>
-    <a class="feature-card" href="{{ url_for('assignments') }}">⏰ Assignment Reminder</a>
-    <a class="feature-card" href="{{ url_for('college') }}">🏫 College Information</a>
-    <a class="feature-card" href="{{ url_for('career') }}">💼 Career Guidance</a>
+{% block content %}
+
+<h1>📊 Welcome, {{ user_name }}!</h1>
+
+<p>Welcome to your AI Learning & Study Assistant.</p>
+
+<a href="/logout" class="btn">🚪 Logout</a>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+    <div class="card">
+        <h2>📚 Study Notes</h2>
+        <p>Access your study materials.</p>
+        <a href="/notes" class="btn">View Notes</a>
+    </div>
+
+    <div class="card">
+        <h2>📝 Assignments</h2>
+        <p>Check your assignments.</p>
+        <a href="/assignments" class="btn">Assignments</a>
+    </div>
+
+    <div class="card">
+        <h2>📅 Exam Timetable</h2>
+        <p>View upcoming exams.</p>
+        <a href="/exam" class="btn">View Exam</a>
+    </div>
+
+    <div class="card">
+        <h2>📈 Attendance</h2>
+        <p>Check your attendance.</p>
+        <a href="/attendance" class="btn">View Attendance</a>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Quiz</h2>
+        <p>Test your knowledge.</p>
+        <a href="/quiz" class="btn">Start Quiz</a>
+    </div>
+
+    <div class="card">
+        <h2>🤖 AI Doubt Assistant</h2>
+        <p>Ask your doubts to AI.</p>
+        <a href="/chatbot" class="btn">Ask AI</a>
+    </div>
+
+    <div class="card">
+        <h2>📊 Progress</h2>
+        <p>Track your learning progress.</p>
+        <a href="/progress" class="btn">View Progress</a>
+    </div>
+
 </div>
+
 {% endblock %}
