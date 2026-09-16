@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Technology Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 8%;
+        }
+
+        .topic {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        p {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #e2e8f0;
+            padding: 4px 7px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>🌐 Web Technology Notes</h2>
+        <a href="/notes">← Back to Notes</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Web Technology 📚</h1>
+
+        <p>
+            Basic HTML, CSS and web development study materials.
+        </p>
+
+        <div class="topic">
+            <h2>1. HTML</h2>
+
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is used to create the structure of web pages.
+            </p>
+
+            <p>
+                Example:
+                <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>2. CSS</h2>
+
+            <p>
+                CSS stands for Cascading Style Sheets.
+                It is used to design and style web pages.
+            </p>
+
+            <p>
+                Example:
+                <code>color: blue;</code>
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>3. JavaScript</h2>
+
+            <p>
+                JavaScript is a programming language used to
+                add interaction and dynamic behaviour to web pages.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>4. Front-End Development</h2>
+
+            <p>
+                Front-end development focuses on the visible
+                part of a website that users interact with.
+            </p>
+
+            <p>
+                Common technologies are HTML, CSS and JavaScript.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
