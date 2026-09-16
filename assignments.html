@@ -1,34 +1,37 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h2>⏰ Assignment Reminder</h2>
 
-<div class="form-card">
-    <form method="POST">
-        <label>Assignment Title</label>
-        <input type="text" name="title" required>
+<h1>📝 Assignments</h1>
 
-        <label>Due Date</label>
-        <input type="date" name="due_date" required>
+<p>Check your subject assignments below.</p>
 
-        <button type="submit" class="btn">Add Assignment</button>
-    </form>
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+    <div class="card">
+        <h2>☕ Java Programming</h2>
+        <p>Complete Java programming exercises.</p>
+        <a href="#" class="btn">View Assignment</a>
+    </div>
+
+    <div class="card">
+        <h2>🌐 Web Technology</h2>
+        <p>Complete HTML and CSS assignment.</p>
+        <a href="#" class="btn">View Assignment</a>
+    </div>
+
+    <div class="card">
+        <h2>🔐 Cyber Security</h2>
+        <p>Study and complete cyber security questions.</p>
+        <a href="#" class="btn">View Assignment</a>
+    </div>
+
+    <div class="card">
+        <h2>🎬 Multimedia</h2>
+        <p>Complete multimedia and animation assignment.</p>
+        <a href="#" class="btn">View Assignment</a>
+    </div>
+
 </div>
 
-<table class="data-table">
-    <tr><th>Title</th><th>Due Date</th><th>Status</th><th>Action</th></tr>
-    {% for t in tasks %}
-    <tr>
-        <td>{{ t['title'] }}</td>
-        <td>{{ t['due_date'] }}</td>
-        <td>{{ t['status'] }}</td>
-        <td>
-            {% if t['status'] != 'Done' %}
-            <a href="{{ url_for('complete_assignment', task_id=t['id']) }}">Mark Done</a>
-            {% else %}
-            ✅
-            {% endif %}
-        </td>
-    </tr>
-    {% endfor %}
-</table>
 {% endblock %}
