@@ -1,19 +1,36 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="form-card">
-    <h2>Create Account</h2>
-    <form method="POST">
-        <label>Name</label>
-        <input type="text" name="name" required>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Register</title>
+</head>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+<body>
 
-        <label>Password</label>
-        <input type="password" name="password" required>
+<h2>🎓 Student Registration</h2>
 
-        <button type="submit" class="btn">Register</button>
-    </form>
-    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
-</div>
-{% endblock %}
+<form method="POST">
+
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <br><br>
+
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+
+<p>
+Already have an account?
+<a href="/login">Login</a>
+</p>
+
+</body>
+</html>
