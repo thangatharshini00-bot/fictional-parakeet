@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Security Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+        }
+
+        nav {
+            background: #4f46e5;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 8%;
+        }
+
+        .topic {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        p {
+            color: #475569;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>🛡️ Cyber Security Notes</h2>
+        <a href="/notes">← Back to Notes</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Cyber Security 📚</h1>
+
+        <p>
+            Basic cyber security study materials.
+        </p>
+
+        <div class="topic">
+            <h2>1. What is Cyber Security?</h2>
+
+            <p>
+                Cyber Security is the practice of protecting
+                computers, networks, applications and data
+                from unauthorized access and attacks.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>2. Authentication</h2>
+
+            <p>
+                Authentication is the process of verifying
+                the identity of a user before allowing access
+                to a system.
+            </p>
+
+            <p>
+                Example: Username and Password.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>3. Encryption</h2>
+
+            <p>
+                Encryption converts readable data into an
+                unreadable form to protect information.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>4. Firewall</h2>
+
+            <p>
+                A firewall monitors and controls network traffic
+                based on security rules.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h2>5. Common Cyber Attacks</h2>
+
+            <p>
+                Some common attacks include phishing,
+                malware, password attacks and denial-of-service attacks.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
