@@ -1,1 +1,286 @@
+from flask import Flask, render_template, request, redirect, url_for, session
+import sqlite3
+from werkzeug.security import generate_password_hash, check_password_hash
+from openai import OpenAI
 
+app = Flask(__name__)
+
+# Session secret key
+app.secret_key = "study-assistant-secret-key"
+
+# OpenAI client
+client = OpenAI()
+
+
+# =========================
+# DATABASE
+# =========================
+
+def init_db():
+    conn = sqlite3.connect("users.db")
+
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+# =========================
+# HOME
+# =========================
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+# =========================
+# DASHBOARD
+# =========================
+
+@app.route("/dashboard")
+def dashboard():
+
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+
+    return render_template(
+        "dashboard.html",
+        user_name=session.get("user_name")
+    )
+
+
+# =========================
+# NOTES
+# =========================
+
+@app.route("/notes")
+def notes():
+    return render_template("notes.html")
+
+
+@app.route("/java-notes")
+def java_notes():
+    return render_template("java_notes.html")
+
+
+@app.route("/web-notes")
+def web_notes():
+    return render_template("web_notes.html")
+
+
+@app.route("/cyber-notes")
+def cyber_notes():
+    return render_template("cyber_notes.html")
+
+
+@app.route("/multimedia-notes")
+def multimedia_notes():
+    return render_template("multimedia_notes.html")
+
+
+@app.route("/database-notes")
+def database_notes():
+    return render_template("database_notes.html")
+
+
+@app.route("/python-notes")
+def python_notes():
+    return render_template("python_notes.html")
+
+
+# =========================
+# ASSIGNMENTS
+# =========================
+
+@app.route("/assignments")
+def assignments():
+    return render_template("assignments.html")
+
+
+# =========================
+# EXAM
+# =========================
+
+@app.route("/exam")
+def exam():
+    return render_template("exam.html")
+
+
+# =========================
+# ATTENDANCE
+# =========================
+
+@app.route("/attendance")
+def attendance():
+    return render_template("attendance.html")
+
+
+# =========================
+# QUIZ
+# =========================
+
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html")
+
+
+# =========================
+# AI CHATBOT
+# =========================
+
+@app.route("/chatbot", methods=["GET", "POST"])
+def chatbot():
+
+    answer = ""
+
+    if request.method == "POST":
+
+        question = request.form.get("question")
+
+        try:
+
+            response = client.responses.create(
+                model="gpt-5.6-luna",
+                input=f"""
+You are an AI study assistant.
+
+Answer the student's question in simple English.
+Give a clear and beginner-friendly explanation.
+
+Student Question:
+{question}
+"""
+            )
+
+            answer = response.output_text
+
+        except Exception as e:
+
+            answer = "AI Error: " + str(e)
+
+    return render_template(
+        "chatbot.html",
+        answer=answer
+    )
+
+
+# =========================
+# PROGRESS
+# =========================
+
+@app.route("/progress")
+def progress():
+    return render_template("progress.html")
+
+
+# =========================
+# REGISTER
+# =========================
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+
+        name = request.form["name"]
+        email = request.form["email"]
+        password = request.form["password"]
+
+        hashed_password = generate_password_hash(password)
+
+        try:
+
+            conn = sqlite3.connect("users.db")
+
+            conn.execute(
+                """
+                INSERT INTO users
+                (name, email, password)
+                VALUES (?, ?, ?)
+                """,
+                (name, email, hashed_password)
+            )
+
+            conn.commit()
+            conn.close()
+
+            return redirect(url_for("login"))
+
+        except sqlite3.IntegrityError:
+
+            return render_template(
+                "register.html",
+                error="Email already registered"
+            )
+
+    return render_template("register.html")
+
+
+# =========================
+# LOGIN
+# =========================
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+
+        email = request.form["email"]
+        password = request.form["password"]
+
+        conn = sqlite3.connect("users.db")
+
+        user = conn.execute(
+            """
+            SELECT id, name, password
+            FROM users
+            WHERE email=?
+            """,
+            (email,)
+        ).fetchone()
+
+        conn.close()
+
+        if user and check_password_hash(user[2], password):
+
+            session["user_id"] = user[0]
+            session["user_name"] = user[1]
+
+            return redirect(url_for("dashboard"))
+
+        return render_template(
+            "login.html",
+            error="Invalid email or password"
+        )
+
+    return render_template("login.html")
+
+
+# =========================
+# LOGOUT
+# =========================
+
+@app.route("/logout")
+def logout():
+
+    session.clear()
+
+    return redirect(url_for("login"))
+
+
+# =========================
+# START DATABASE + APP
+# =========================
+
+init_db()
+
+if __name__ == "__main__":
+    app.run(debug=True)
