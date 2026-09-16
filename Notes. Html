@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>📚 Study Notes</h1>
+
+<p>Select a subject to view your study materials.</p>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+    <div class="card">
+        <h2>☕ Java Programming</h2>
+        <p>Java notes and important topics.</p>
+        <a href="/java-notes" class="btn">View Notes</a>
+    </div>
+
+    <div class="card">
+        <h2>🌐 Web Technology</h2>
+        <p>HTML, CSS and web development notes.</p>
+        <a href="/web-notes" class="btn">View Notes</a>
+    </div>
+
+    <div class="card">
+        <h2>🔐 Cyber Security</h2>
+        <p>Cyber security study materials.</p>
+        <a href="/cyber-notes" class="btn">View Notes</a>
+    </div>
+
+    <div class="card">
+        <h2>🎬 Multimedia</h2>
+        <p>Multimedia and animation notes.</p>
+        <a href="/multimedia-notes" class="btn">View Notes</a>
+    </div>
+
+    <div class="card">
+        <h2>🗄️ Database</h2>
+        <p>Database management system notes.</p>
+        <a href="/database-notes" class="btn">View Notes</a>
+    </div>
+
+    <div class="card">
+        <h2>🐍 Python</h2>
+        <p>Python programming notes.</p>
+        <a href="/python-notes" class="btn">View Notes</a>
+    </div>
+
+</div>
+
+{% endblock %}
